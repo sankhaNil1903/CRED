@@ -36,13 +36,13 @@ def deleteKeyValue():
     filename=input("Enter a file name to from which key value is to be deleted")
     if os.path.exists(filename):
         key=input('Enter key')
-        value=input("Enter value")
-
         with open(filename, "r") as f:
             lines = f.readlines()
-        with open("yourfile.txt", "w") as f:
+
+        with open(filename, "w") as f:
             for line in lines:
-                if line.strip("\n") != key+" "+value:
+                
+                if key not in line.strip().split(' ') :
                     f.write(line)
     else:
         print("No such file exists")
@@ -52,8 +52,8 @@ def main():
     while True:
         print("choose correct option from 1 - 4")
         try:        
-            option=int(input("1. Creat \n 2. Read \n 3. Edit \n 4.Delete \n 5.exit\n"))
-            print('here',option==3)
+            option=int(input("1. Creat \n 2. Read \n 3. Edit \n 4.Delete \n "))
+            
             if option==1:
                 createFile()
             elif option==2:
@@ -64,18 +64,19 @@ def main():
                 deleteKeyValue()
             
             elif option==5:
+
                 break
             else :
                 
-                print("invalid input \n Try again....")
+                print("invalid input \n Try again.... ")
     
 
         except Exception:
-            print("something went wrong \n Try again....")
+            print("something went wrong \n Try again.... ")
             print(print("Oops!", sys.exc_info()[0], "occurred."))
 
 
-        wantToContinue=input("t/T for continue or  press any key to teminate program")
+        wantToContinue=input("t/T for continue or  press any key to teminate program    ")
 
         if wantToContinue in ('t','T'):
             continue
