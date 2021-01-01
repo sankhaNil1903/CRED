@@ -72,8 +72,9 @@ def main():
     
 
         except Exception:
-            print("something went wrong \n Try again.... ")
-            print(print("Oops!", sys.exc_info()[0], "occurred."))
+             
+            print("Oops!", sys.exc_info()[0], "occurred.")
+            
 
 
         wantToContinue=input("t/T for continue or  press any key to teminate program    ")
