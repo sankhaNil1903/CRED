@@ -1,4 +1,5 @@
 import os
+import sys
 def createFile():
     filename=input("Enter a file name")+".txt"
     if os.path.exists(filename):
@@ -55,14 +56,14 @@ def main():
             print('here',option==3)
             if option==1:
                 createFile()
-            if option==2:
+            elif option==2:
                 readFile()    
-            if option==3:
+            elif option==3:
                 editFile()
-            if option==4:
+            elif option==4:
                 deleteKeyValue()
             
-            if option==5:
+            elif option==5:
                 break
             else :
                 
@@ -71,6 +72,8 @@ def main():
 
         except Exception:
             print("something went wrong \n Try again....")
+            print(print("Oops!", sys.exc_info()[0], "occurred."))
+
 
         wantToContinue=input("t/T for continue or  press any key to teminate program")
 
