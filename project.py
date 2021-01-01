@@ -52,7 +52,7 @@ def main():
     while True:
         print("choose correct option from 1 - 4")
         try:        
-            option=int(input("1. Creat \n 2. Read \n 3. Edit \n 4.Delete \n "))
+            option=int(input("1. Create \n 2. Read \n 3. Edit \n 4.Delete \n "))
             
             if option==1:
                 createFile()
